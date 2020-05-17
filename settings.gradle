@@ -1,0 +1,3 @@
+rootProject.name='CoroutinePermission'
+include ':app'
+include ':library'
