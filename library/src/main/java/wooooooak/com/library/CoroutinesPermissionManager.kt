@@ -55,15 +55,15 @@ class CoroutinesPermissionManager : Fragment() {
         requestModel: PermissionRequest
     ) {
         AlertDialog.Builder(context)
-            .setTitle(requestModel.rationaleTitle)
-            .setMessage(requestModel.rationaleMessage)
+            .setTitle(requestModel.rationale.title)
+            .setMessage(requestModel.rationale.message)
             .setCancelable(false)
             .setPositiveButton(
-                requestModel.rationaleConfirmText
+                requestModel.rationale.confirmText
             ) { _, _ ->
                 requestPermissions(permissionList, REQUEST_CONST)
             }
-            .setNegativeButton(requestModel.rationaleCancelText) { _, _ ->
+            .setNegativeButton(requestModel.rationale.cancelText) { _, _ ->
                 completableDeferred.complete(PermissionResult.Denied(permissionList.toList(), listOf()))
             }
             .show()

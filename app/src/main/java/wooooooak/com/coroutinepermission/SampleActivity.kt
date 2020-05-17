@@ -26,8 +26,10 @@ class SampleActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 val result = CoroutinesPermissionManager.requestPermission(this@SampleActivity) {
                     permissionList = _permissionList
-                    rationaleTitle = "Alert"
-                    rationaleMessage = "Please Press Ok Button!"
+                    Rationale {
+                        title = "Alert"
+                        message = "Please Press Ok Button!"
+                    }
                 }
                 when (result) {
                     is PermissionResult.Granted -> {
