@@ -1,7 +1,8 @@
 # CoroutinesPermission
-
+<p>
 <img src="https://img.shields.io/badge/version-1.0.0-blue"/>
 <img src="https://img.shields.io/badge/license-Apache License--2-red"/>
+</p>
 
 Android library Android Library for easy permission management
 
@@ -42,8 +43,10 @@ We will use kotlin DSL for request permission.
 yourCoroutineScope.launch {
     val result = CoroutinesPermissionManager.requestPermission(activity) {
         permissionList = listOf(Manifest.permission.CAMERA, or something..)
-        rationaleTitle = "Alert"
-        rationaleMessage = "In order to use the app, camera permission is required."
+        Rationale {
+            title = "Alert"
+            message = "In order to use the app, camera permission is required."
+        }
                             ...
     }
     when (result) {
