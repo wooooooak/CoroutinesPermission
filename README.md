@@ -1,5 +1,8 @@
 # CoroutinesPermission
 
+<img src="https://img.shields.io/badge/version-1.0.0-blue"/>
+<img src="https://img.shields.io/badge/license-Apache License--2-red"/>
+
 Android library Android Library for easy permission management
 
 ## Install
@@ -64,7 +67,7 @@ You can set the following items.
 
 **Rationale example**
 
-![image](https://user-images.githubusercontent.com/18481078/82140539-36b4df00-986a-11ea-8a66-ed5aafcfdb4f.png){: height="400"}
+<img src="https://user-images.githubusercontent.com/18481078/82140539-36b4df00-986a-11ea-8a66-ed5aafcfdb4f.png" width="250" height="500">
 
 ### Result
 
