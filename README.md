@@ -72,7 +72,7 @@ You can set the following items.
 
 <img src="https://user-images.githubusercontent.com/18481078/82140539-36b4df00-986a-11ea-8a66-ed5aafcfdb4f.png" width="250" height="500">
 
-### Result
+## Result
 
 Result is an Seald Class.
 
