@@ -95,7 +95,7 @@ sealed class PermissionResult {
 }
 ```
 
-Therefore, if the permission acquisition fails, it is possible to know which authority was not obtained and which authority was permanently denied.
+Therefore, if the permission acquisition fails, it is possible to know which permission was not obtained and which permission was permanently denied.
 
 ## License
 
