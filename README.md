@@ -74,7 +74,7 @@ You can set the following items.
 
 ## Result
 
-Result is an Seald Class.
+Result is an Sealed Class.
 
 ```kotlin
 sealed class PermissionResult {
