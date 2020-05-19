@@ -4,9 +4,9 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commitNow
 import kotlinx.coroutines.CompletableDeferred
 import wooooooak.com.library.model.PermissionRequest
@@ -74,7 +74,7 @@ class CoroutinesPermissionManager : Fragment() {
         private const val REQUEST_CONST = 11
 
         suspend fun requestPermission(
-            activity: AppCompatActivity,
+            activity: FragmentActivity,
             requestModel: PermissionRequest.() -> Unit
         ): PermissionResult {
             val permissionRequest = PermissionRequest().apply {

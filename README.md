@@ -1,6 +1,6 @@
 # CoroutinesPermission
 <p>
-<img src="https://img.shields.io/badge/version-1.0.1-blue"/>
+<img src="https://img.shields.io/badge/version-1.0.2-blue"/>
 <img src="https://img.shields.io/badge/license-Apache License--2-red"/>
 </p>
 
@@ -33,7 +33,7 @@ allprojects {
 implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
 ```
 
-The latest version is 1.0.1. Checkout [here](https://github.com/wooooooak/DynamicTree/CoroutinesPermission)
+The latest version is 1.0.2. Checkout [here](https://github.com/wooooooak/DynamicTree/CoroutinesPermission)
 
 ## Usage
 
