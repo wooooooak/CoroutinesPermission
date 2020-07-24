@@ -23,9 +23,9 @@ allprojects {
 
 2.  Add the dependency to your app level build.gradle file
 
-    ```
-    implementation 'com.github.wooooooak:CoroutinesPermission:version'
-    ```
+```
+implementation 'com.github.wooooooak:CoroutinesPermission:version'
+```
 
 **Since this library uses coroutine, it is recommended to add the [following library](<[https://developer.android.com/topic/libraries/architecture/coroutines](https://developer.android.com/topic/libraries/architecture/coroutines)>) for convenience.**
 
