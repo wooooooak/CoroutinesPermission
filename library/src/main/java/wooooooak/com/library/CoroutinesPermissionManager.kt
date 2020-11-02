@@ -23,7 +23,7 @@ class CoroutinesPermissionManager : Fragment() {
         if (grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
             completableDeferred.complete(PermissionResult.Granted)
         } else {
-            val deniedPermissionList = permissions.filterIndexed { index, s ->
+            val deniedPermissionList = permissions.filterIndexed { index, _ ->
                 grantResults[index] == PackageManager.PERMISSION_DENIED
             }
             val permanently = deniedPermissionList.filterNot {
@@ -74,14 +74,14 @@ class CoroutinesPermissionManager : Fragment() {
         private const val REQUEST_CONST = 11
 
         suspend fun requestPermission(
-            activity: FragmentActivity,
+            fragmentActivity: FragmentActivity,
             requestModel: PermissionRequest.() -> Unit
         ): PermissionResult {
             val permissionRequest = PermissionRequest().apply {
                 requestModel()
             }
             val permissionManager = CoroutinesPermissionManager()
-            val fragmentManager = activity.supportFragmentManager
+            val fragmentManager = fragmentActivity.supportFragmentManager
             fragmentManager.findFragmentByTag(TAG)?.let {
                 fragmentManager.commitNow {
                     remove(it)

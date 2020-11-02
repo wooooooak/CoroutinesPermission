@@ -26,14 +26,15 @@ allprojects {
 ```
 implementation 'com.github.wooooooak:CoroutinesPermission:version'
 ```
+The latest version is 1.0.2. Checkout [here](https://github.com/wooooooak/CoroutinesPermission/releases)
+
 
 **Since this library uses coroutine, it is recommended to add the [following library](<[https://developer.android.com/topic/libraries/architecture/coroutines](https://developer.android.com/topic/libraries/architecture/coroutines)>) for convenience.**
 
 ```groovy
-implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+implementation "androidx.lifecycle:lifecycle-runtime-ktx:library_version"
 ```
-
-The latest version is 1.0.2. Checkout [here](https://github.com/wooooooak/DynamicTree/CoroutinesPermission)
+[check version here](https://developer.android.com/jetpack/androidx/releases/lifecycle)
 
 ## Usage
 
@@ -58,7 +59,7 @@ yourCoroutineScope.launch {
 
 You can set the following items.
 
-- permissionLIst (**required**) : List of permission to acquire.
+- permissionList (**required**) : List of permission to acquire.
 
 - rationaleTitle (option) : Title for Rationale dialog.
 
