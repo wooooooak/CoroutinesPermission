@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commitNow
 import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import wooooooak.com.library.model.PermissionRequest
 
 class CoroutinesPermissionManager : Fragment() {
@@ -77,6 +79,20 @@ class CoroutinesPermissionManager : Fragment() {
             fragmentActivity: FragmentActivity,
             requestModel: PermissionRequest.() -> Unit
         ): PermissionResult {
+            return getPermissionResult(fragmentActivity, requestModel)
+        }
+
+        suspend fun requestPermissionFlow(
+            fragmentActivity: FragmentActivity,
+            requestModel: PermissionRequest.() -> Unit
+        ): Flow<PermissionResult> = flow {
+            emit(getPermissionResult(fragmentActivity, requestModel))
+        }
+
+        private suspend fun getPermissionResult(
+            fragmentActivity: FragmentActivity,
+            requestModel: PermissionRequest.() -> Unit
+        ): PermissionResult {
             val permissionRequest = PermissionRequest().apply {
                 requestModel()
             }
@@ -93,5 +109,6 @@ class CoroutinesPermissionManager : Fragment() {
             permissionManager.checkPermission(permissionRequest)
             return permissionManager.completableDeferred.await()
         }
+
     }
 }

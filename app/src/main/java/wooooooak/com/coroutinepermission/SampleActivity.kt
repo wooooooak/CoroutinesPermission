@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_sample.*
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import wooooooak.com.library.CoroutinesPermissionManager
 import wooooooak.com.library.PermissionResult
@@ -27,7 +28,7 @@ class SampleActivity : AppCompatActivity() {
                 val result = CoroutinesPermissionManager.requestPermission(this@SampleActivity) {
                     permissionList = _permissionList
                     Rationale {
-                        title = "Alert"
+                        title = "This is Rationale Title."
                         message = "Please Press Ok Button!"
                     }
                 }
@@ -41,6 +42,30 @@ class SampleActivity : AppCompatActivity() {
                     }
                 }
                 Toast.makeText(this@SampleActivity, result.toString(), Toast.LENGTH_LONG).show()
+            }
+        }
+
+        button2.setOnClickListener {
+            lifecycleScope.launch {
+                CoroutinesPermissionManager
+                    .requestPermissionFlow(this@SampleActivity) {
+                        permissionList = _permissionList
+                        Rationale {
+                            title = "This is Rationale Title."
+                            message = "Please Press Ok Button!"
+                        }
+                    }.collect {
+                        when (it) {
+                            is PermissionResult.Granted -> {
+                                println(it)
+                            }
+                            is PermissionResult.Denied -> {
+                                println(it.deniedList)
+                                println(it.permanentlyDeniedList)
+                            }
+                        }
+                        Toast.makeText(this@SampleActivity, it.toString(), Toast.LENGTH_LONG).show()
+                    }
             }
         }
     }
