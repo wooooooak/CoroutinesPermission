@@ -1,6 +1,7 @@
 # CoroutinesPermission
+
 <p>
-<img src="https://img.shields.io/badge/version-1.0.2-blue"/>
+<img src="https://img.shields.io/badge/version-1.1.0-blue"/>
 <img src="https://img.shields.io/badge/license-Apache License--2-red"/>
 </p>
 
@@ -26,14 +27,15 @@ allprojects {
 ```
 implementation 'com.github.wooooooak:CoroutinesPermission:version'
 ```
-The latest version is 1.0.2. Checkout [here](https://github.com/wooooooak/CoroutinesPermission/releases)
 
+The latest version is 1.0.2. Checkout [here](https://github.com/wooooooak/CoroutinesPermission/releases)
 
 **Since this library uses coroutine, it is recommended to add the [following library](<[https://developer.android.com/topic/libraries/architecture/coroutines](https://developer.android.com/topic/libraries/architecture/coroutines)>) for convenience.**
 
 ```groovy
 implementation "androidx.lifecycle:lifecycle-runtime-ktx:library_version"
 ```
+
 [check version here](https://developer.android.com/jetpack/androidx/releases/lifecycle)
 
 ## Usage
